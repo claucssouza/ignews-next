@@ -1,4 +1,5 @@
-import styles from './header.module.scss';
+import { SignInButton } from '../SignInButton';
+import styles from './styles.module.scss';
 
 const Header = () => {
     return (
@@ -9,6 +10,7 @@ const Header = () => {
                     <a className={styles.active}>Home</a>
                     <a>Posts</a>
                 </nav>
+                <SignInButton />
             </div>
         </header>
     )
