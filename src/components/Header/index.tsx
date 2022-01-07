@@ -1,5 +1,6 @@
 import { SignInButton } from '../SignInButton';
 import styles from './styles.module.scss';
+import { ActiveLink } from '../ActiveLink';
 
 const Header = () => {
     return (
@@ -7,8 +8,12 @@ const Header = () => {
             <div className={styles.headerContent}>
                 <img src="/assets/images/logo.svg" alt="ig.news" />
                 <nav>
-                    <a className={styles.active}>Home</a>
-                    <a>Posts</a>
+                    <ActiveLink activeClassName={styles.active} href="/">
+                        <a className={styles.active}>Home</a>
+                    </ActiveLink>
+                    <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
+                        <a>Posts</a>
+                    </ActiveLink>
                 </nav>
                 <SignInButton />
             </div>
