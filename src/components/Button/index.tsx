@@ -4,14 +4,11 @@ import { useRouter } from 'next/router';
 import { api } from '../../services/api';
 import { getStripeJs } from '../../services/stripe-js';
 
-interface Button {
-    priceId: string;
-}
 
-const Button = ({ priceId }: Button) => {
+const Button = () => {
 
     const { data } = useSession();
-    const router = useRouter()
+    const router = useRouter();
 
     const handleSubscribe = async () => {
         if (!data) {
