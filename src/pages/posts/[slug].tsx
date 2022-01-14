@@ -38,7 +38,7 @@ export default Post;
 
 export const getServerSideProps: GetServerSideProps = async ({ req, params }) => {
     const session = await getSession({ req });
-    if (session?.activeSubscription) {
+    if (!session?.activeSubscription) {
         return {
             redirect: {
                 destination: '/',
