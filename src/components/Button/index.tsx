@@ -1,8 +1,8 @@
-import styles from './styles.module.scss';
-import { useSession, signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { api } from '../../services/api';
 import { getStripeJs } from '../../services/stripe-js';
+import styles from './styles.module.scss';
 
 
 const Button = () => {
@@ -15,7 +15,7 @@ const Button = () => {
             signIn('github');
             return;
         }
-        if (data.activeSubscription) {
+        if (data) {
             router.push('/posts');
             return;
         }
